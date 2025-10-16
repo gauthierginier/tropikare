@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#008CA8" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="TropiKare" />
+    
+    <title>TropiKare - Plateforme de mise en relation paramédicale</title>
+    <meta name="description" content="TropiKare simplifie et accélère le processus de remplacement pour garantir la continuité des soins dans le secteur paramédical." />
+    <meta name="keywords" content="soignants, missions paramédicales, remplacements médicaux, recrutement santé, IDE, aide-soignant" />
+    <meta name="author" content="TropiKare" />
+
+    <meta property="og:title" content="TropiKare - Plateforme de mise en relation paramédicale" />
+    <meta property="og:description" content="Simplifiez et accélérez les remplacements dans le secteur paramédical" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tropikare.fr" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="TropiKare" />
+    <meta name="twitter:description" content="Plateforme de mise en relation paramédicale" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="manifest" href="/tropikare/manifest.json" />
+    <script type="module" crossorigin src="/tropikare/assets/index-Ck43ZMmG.js"></script>
+    <link rel="stylesheet" crossorigin href="/tropikare/assets/index-wcPmt-85.css">
+  <link rel="manifest" href="/tropikare/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/tropikare/registerSW.js"></script></head>
+
+  <body>
+    <div id="root"></div>
+    <script>
+      // Register service worker for PWA
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(registration => console.log('SW registered'))
+            .catch(err => console.log('SW registration failed'));
+        });
+      }
+    </script>
+  </body>
+</html>
