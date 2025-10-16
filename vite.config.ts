@@ -25,6 +25,7 @@ export default defineConfig(({ mode }) => ({
         background_color: "#008CA8",
         display: "standalone",
         start_url: "/tropikare/",
+        scope: "/tropikare/",
         icons: [
           {
             src: "/tropikare/icon-192.png",
