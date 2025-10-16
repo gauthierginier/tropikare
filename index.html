@@ -37,38 +37,12 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <script>
-      // Redirection robuste pour iOS PWA
-      (function() {
-        const currentUrl = window.location;
-        const isRootDomain = currentUrl.pathname === '/' && currentUrl.hostname === 'gauthierginier.github.io';
-        const isStandalone = window.navigator.standalone === true;
-        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-        
-        // Rediriger si on est sur la racine ET (en mode standalone iOS OU en mode normal)
-        if (isRootDomain && (isStandalone || !isStandalone)) {
-          console.log('Redirection vers /tropikare/');
-          window.location.replace('/tropikare/');
-          return;
-        }
-        
-        // Vérifier si on est dans le mauvais sous-dossier
-        if (currentUrl.pathname.startsWith('/tropikare/') === false && currentUrl.hostname === 'gauthierginier.github.io') {
-          console.log('Redirection vers le bon sous-dossier');
-          window.location.replace('/tropikare/');
-          return;
-        }
-      })();
-      
       // Register service worker for PWA
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
           navigator.serviceWorker.register('./sw.js')
-            .then(registration => {
-              console.log('SW registered successfully');
-              // Forcer la mise à jour du service worker
-              registration.update();
-            })
-            .catch(err => console.log('SW registration failed:', err));
+            .then(registration => console.log('SW registered'))
+            .catch(err => console.log('SW registration failed'));
         });
       }
     </script>
