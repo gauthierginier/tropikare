@@ -37,6 +37,11 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <script>
+      // Redirection pour iOS PWA si on est sur la racine
+      if (window.location.pathname === '/' && window.location.hostname === 'gauthierginier.github.io') {
+        window.location.href = '/tropikare/';
+      }
+      
       // Register service worker for PWA
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
