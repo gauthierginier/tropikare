@@ -41,6 +41,8 @@ export default defineConfig(({ mode }) => ({
       },
       workbox: {
         globPatterns: ["**/*.{js,css,html,ico,png,svg,jpg,jpeg}"],
+        navigateFallback: "/tropikare/index.html",
+        navigateFallbackDenylist: [/^\/_/, /\/[^/?]+\.[^/]+$/],
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
@@ -54,6 +56,13 @@ export default defineConfig(({ mode }) => ({
               cacheableResponse: {
                 statuses: [0, 200],
               },
+            },
+          },
+          {
+            urlPattern: /^https:\/\/gauthierginier\.github\.io\/$/,
+            handler: "NetworkFirst",
+            options: {
+              cacheName: "root-redirect-cache",
             },
           },
         ],
